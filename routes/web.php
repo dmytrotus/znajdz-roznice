@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/game',  function () {
-    return view('game');
-});
+Route::get('/game',  'GamerController@index');
+
+Route::post('savedata', [
+		'uses' => 'GamerController@savedata',
+		'as' => 'savedata'
+	]);
