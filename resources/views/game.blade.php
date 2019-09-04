@@ -66,9 +66,7 @@
     @if ($errors->any())
     <div class="alert alert-danger">
         <div class="text-center" role="alert">
-            @foreach ($errors->all() as $error)
-                {{ $error }}
-            @endforeach
+           Musi być min 3 znaki - tylko duże/małe litery i cyfry
          </div>
     </div>
     @endif
