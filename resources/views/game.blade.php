@@ -112,9 +112,11 @@
     </tr>
   </thead>
   <tbody>
-  @foreach ($gamers as $g)
+
+  <input value="{{ $index = 1 }}" type="hidden"> 
+  @foreach ($gamers->sortBy('time') as $g) 
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{ $index++ }}</th>
       <td>{{ $g->nick }}</td>
       <td>{{ $g->time }}</td>
       <td></td>
