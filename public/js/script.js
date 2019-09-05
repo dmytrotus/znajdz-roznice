@@ -1,4 +1,35 @@
 
+$(document).ready(function(){
+    $("input#nick").on("input", function(){
+        $nick = ($(this).val());
+
+        if ( $nick.length < 3 && $nick.length != 0 )
+		{
+			$('button#submit').attr("disabled", "true");
+			$errormsg = '"Nick" musi zawierać minimum 3 znaki'
+			$('span.error').css('opacity', '1');
+			$('span.error').text($errormsg);
+		} else 
+		{
+			$isValid = /^[A-Za-z0-9]{3,}$/.test($nick);
+			if (!$isValid && $nick.length != 0 ) {
+				$('button#submit').attr("disabled", "true");
+				$errormsg = '"Nick" musi być bez znaków specjalnych';
+				$('span.error').css('opacity', '1');
+				$('span.error').text($errormsg);
+			} else {
+				$errormsg = '';
+				$('span.error').css('opacity', '0');
+				$('span.error').text($errormsg);
+				$('button#submit').removeAttr("disabled");
+			}
+		};
+	});
+
+});
+
+
+
 function timer(){
 
     var sec = 0;
@@ -14,7 +45,6 @@ function timer(){
 timer();
 
 $i = 1; //first found object
-
 $('.divImg').click(function( i ) {
 
 	$('span#currentDifferences').text($i++);
@@ -30,9 +60,5 @@ $('.divImg').click(function( i ) {
 		$('.modal').css('display','block');
 	
 	}
-
-	
-
-
 
 });

@@ -19,17 +19,17 @@ class GamerController extends Controller
     {
     	$r = request();
 
-    	$this->validate($r, [
+    	/*$this->validate($r, [
     		'nick' => 'required|min:3',
     		'time' => 'required'
-    	]);
+    	]);*/
 
     	$gamer = Gamer::create([
     		'nick' => $r->nick,
     		'time' => $r->time
     	]);
 
-    	Session::flash('success', 'Dziękuję. Zobacz swoją pozycje w rankingu na dole');
+    	Session::flash('success', 'Dziękuję. Zobacz swoją pozycję w rankingu na dole');
 
     	return back();
     }

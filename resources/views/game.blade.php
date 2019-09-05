@@ -23,6 +23,9 @@
       .navbar-brand.time span{
         font-weight: 700;
       }
+      span.error{
+        opacity: 0;
+      }
       /* .divImg:after{
         background: url('images/check/check_img.jpg');
         display: block;
@@ -135,19 +138,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Gotowe</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        
       </div>
       <div class="modal-body">
         <p class="text-center">Wpisz swój nick.</p>
       <form action="{{ route('savedata') }}" method="POST">
         {{ csrf_field() }}
         <input value="" type="hidden" name="time" id="usersTime">
-        <p><input placeholder="min 3 znaki - tylko duże/małe litery i cyfry" name="nick" type="text" class="form-control"></p>
+        <p><input placeholder="min 3 znaki - tylko duże/małe litery i cyfry" name="nick" type="text" id="nick" class="form-control"></p>
+        <p><span class="text-center form-control error alert alert-danger"></span></p>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Zapisz</button>
+        <button disabled id="submit" type="submit" class="btn btn-primary">Zapisz</button>
       </form>
       </div>
     </div>
