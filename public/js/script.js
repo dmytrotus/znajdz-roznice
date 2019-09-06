@@ -44,10 +44,13 @@ function timer(){
 
 timer();
 
-$i = 1; //first found object
-$('.divImg').click(function( i ) {
+function foundDiffer( differences ) {
 
-	$('span#currentDifferences').text($i++);
+	//alert($differences);
+
+	$countDiff = $differences.length / 2;
+
+	$('span#currentDifferences').text($countDiff);
 	$current = $('span#currentDifferences').text();
 	$current = parseInt($current);
 	if ( $current === 5 )
@@ -61,4 +64,72 @@ $('.divImg').click(function( i ) {
 	
 	}
 
+};
+
+function checkDifferences()
+{
+const areas = {
+  'area.number1': 'bingo1',
+  'area.number2': 'bingo2',
+  'area.number3': 'bingo3',
+  'area.number4': 'bingo4',
+  'area.number5': 'bingo5',
+
+  'area.number1-1': 'bingo1-1',
+  'area.number2-1': 'bingo2-1',
+  'area.number3-1': 'bingo3-1',
+  'area.number4-1': 'bingo4-1',
+  'area.number5-1': 'bingo5-1'
+};
+
+$differences = [];
+
+const handleClick = function(text){
+
+	if(text === 'bingo1' || text === 'bingo1-1'){
+		if(!$differences.includes('bingo1'))
+		{
+		$differences.push('bingo1');
+		$differences.push('bingo1-1');
+		};
+	}
+	if(text === 'bingo2' || text === 'bingo2-1'){
+		if(!$differences.includes('bingo2'))
+		{
+		$differences.push('bingo2');
+		$differences.push('bingo2-1');
+		};
+	}
+	if(text === 'bingo3' || text === 'bingo3-1'){
+		if(!$differences.includes('bingo3'))
+		{
+		$differences.push('bingo3');
+		$differences.push('bingo3-1');
+		};
+	}
+	if(text === 'bingo4' || text === 'bingo4-1'){
+		if(!$differences.includes('bingo4'))
+		{
+		$differences.push('bingo4');
+		$differences.push('bingo4-1');
+		}
+	}
+	if(text === 'bingo5' || text === 'bingo5-1'){
+		if(!$differences.includes('bingo5'))
+		{
+		$differences.push('bingo5');
+		$differences.push('bingo5-1');
+		};
+	};
+	
+	//alert($differences.length);
+	foundDiffer($differences);
+
+};
+
+Object.entries(areas).forEach(([selector, text]) => {
+  document.querySelector(selector).addEventListener('click', handleClick.bind(null, text), false);
 });
+};
+
+checkDifferences();

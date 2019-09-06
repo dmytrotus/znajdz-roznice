@@ -14,6 +14,12 @@
         margin:0;
         padding: 0;
       }
+      area{
+        cursor: auto;
+      }
+      map{
+        display: inline;
+      }
       .modal{
         display: none;
       }
@@ -26,16 +32,10 @@
       span.error{
         opacity: 0;
       }
-      /* .divImg:after{
-        background: url('images/check/check_img.jpg');
-        display: block;
-        content: '';
-        height: 100%;
-        width: 100%;
-        position: relative;
-        bottom: 100%;
-        opacity: .4;
-      } */
+
+      .imgMap > area{
+        background: red;
+      }
       
       @media (max-width: 400px){
         
@@ -91,13 +91,34 @@
 
     <div class="row">
       <div class="divImg">
-      <img src="images/a.png" alt="" class="img-responsive">
+      <img usemap="#imgAMap" src="images/a.png" alt="" class="img-responsive">
+
+       <map name="imgAMap">
+        <area class="number1" shape="circle" coords="60, 60, 20" nohref>
+        <area class="number2" shape="circle" coords="255, 90, 20" nohref>
+        <area class="number3" shape="circle" coords="490, 210, 20" nohref>
+        <area class="number4" shape="circle" coords="630, 260, 40" nohref>
+        <area class="number5" shape="circle" coords="300, 370, 40" nohref>
+      </map>
+
       </div>
 
+
+
       <div class="divImg">
-      <img src="images/b.jpg" alt="" class="img-responsive">
+      <img usemap="#imgBMap" src="images/b.jpg" alt="" class="img-responsive">
+
+      <map name="imgBMap">
+        <area class="number1-1" shape="circle" coords="60, 60, 20" nohref>
+        <area class="number2-1" shape="circle" coords="255, 90, 20" nohref>
+        <area class="number3-1" shape="circle" coords="490, 210, 20" nohref>
+        <area class="number4-1" shape="circle" coords="630, 260, 40" nohref>
+        <area class="number5-1" shape="circle" coords="300, 370, 40" nohref>
+      </map>
+
       </div>
     </div>
+   
 
 
     <div class="card" style="width: 100%;">
