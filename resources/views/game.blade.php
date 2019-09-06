@@ -14,6 +14,12 @@
         margin:0;
         padding: 0;
       }
+      body{
+        overflow-x: hidden;
+      }
+      img{
+        max-width: 100%;
+      }
       area{
         cursor: auto;
       }
