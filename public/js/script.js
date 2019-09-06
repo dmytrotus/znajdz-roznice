@@ -9,6 +9,10 @@ $(document).ready(function(){
 			$errormsg = '"Nick" musi zawierać minimum 3 znaki'
 			$('span.error').css('opacity', '1');
 			$('span.error').text($errormsg);
+		} else if($nick.length === 0)
+		{
+			$('button#submit').attr("disabled", "true");
+			$('span.error').css('opacity', '0');
 		} else 
 		{
 			$isValid = /^[A-Za-z0-9]{3,}$/.test($nick);
