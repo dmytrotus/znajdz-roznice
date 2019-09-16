@@ -1,5 +1,5 @@
-
 $(document).ready(function(){
+
     $("input#nick").on("input", function(){
         $nick = ($(this).val());
 
@@ -42,15 +42,11 @@ function timer(){
         document.getElementById("seconds").innerHTML=pad(++sec%60);
         document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
     }, 1000);
-   
-    //clearInterval(intervalID); //stop the timer  
 };
 
 timer();
 
 function foundDiffer( differences ) {
-
-	//alert($differences);
 
 	$countDiff = $differences.length / 2;
 
@@ -126,7 +122,6 @@ const handleClick = function(text){
 		};
 	};
 	
-	//alert($differences.length);
 	foundDiffer($differences);
 
 };

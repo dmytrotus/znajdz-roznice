@@ -17,7 +17,4 @@ Route::get('/', function () {
 
 Route::get('/game',  'GamerController@index');
 
-Route::post('savedata', [
-		'uses' => 'GamerController@savedata',
-		'as' => 'savedata'
-	]);
+Route::post('/savedata', 'GamerController@savedata');

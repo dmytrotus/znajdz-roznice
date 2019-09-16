@@ -1,0 +1,52 @@
+*{
+        margin:0;
+        padding: 0;
+      }
+      body{
+        overflow-x: hidden;
+      }
+      img{
+        max-width: 100%;
+      }
+      area{
+        cursor: auto;
+      }
+      map{
+        display: inline;
+      }
+      .modal{
+        display: none;
+      }
+      .navbar{
+        justify-content: space-between;
+      }
+      .navbar-brand.time span{
+        font-weight: 700;
+      }
+      span.error{
+        opacity: 0;
+      }
+
+      .imgMap > area{
+        background: red;
+      }
+      
+      @media (max-width: 400px){
+        
+        .btn{
+          margin: 0 auto;
+        }
+      }
+      li.row{
+        margin: 0 auto;
+      }
+      li.row p{
+        float: left;
+        margin: 0 30px;
+      }
+      li.row p span{
+        font-weight: bolder;
+      }
+      .card{
+        width: 100%;
+      }
