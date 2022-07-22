@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/game',  'GamerController@index');
+Route::get('/', 'GamerController@index');
 
 Route::post('/savedata', 'GamerController@savedata');
